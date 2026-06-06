@@ -1,0 +1,53 @@
+{
+"Country": [
+"pakistan","india","china","iran","afghanistan","turkey","saudiarabia","uae","qatar","kuwait",
+"oman","yemen","iraq","syria","jordan","lebanon","egypt","libya","sudan","ethiopia",
+"kenya","uganda","tanzania","nigeria","ghana","morocco","algeria","tunisia","spain","france",
+"germany","italy","portugal","netherlands","belgium","switzerland","austria","poland","norway","sweden",
+"finland","denmark","iceland","ireland","uk","usa","canada","mexico","brazil","argentina",
+"chile","peru","colombia","venezuela","ecuador","bolivia","paraguay","uruguay","australia","newzealand",
+"japan","southkorea","northkorea","thailand","vietnam","malaysia","singapore","indonesia","philippines","nepal",
+"bhutan","bangladesh","srilanka","maldives","mongolia","kazakhstan","uzbekistan","turkmenistan","tajikistan","kyrgyzstan",
+"greece","hungary","czechia","slovakia","romania","bulgaria","croatia","serbia","slovenia","bosnia",
+"ukraine","belarus","estonia","latvia","lithuania","zimbabwe","zambia","botswana","namibia","angola"
+],
+
+"City": [
+"islamabad","newdelhi","beijing","tehran","kabul","ankara","riyadh","abudhabi","doha","kuwaitcity",
+"muscat","sanaa","baghdad","damascus","amman","beirut","cairo","tripoli","khartoum","addisababa",
+"nairobi","kampala","dodoma","abuja","accra","rabat","algiers","tunis","madrid","paris",
+"berlin","rome","lisbon","amsterdam","brussels","bern","vienna","warsaw","oslo","stockholm",
+"helsinki","copenhagen","reykjavik","dublin","london","washingtondc","ottawa","mexicocity","brasilia","buenosaires",
+"santiago","lima","bogota","caracas","quito","lapaz","asuncion","montevideo","canberra","wellington",
+"tokyo","seoul","pyongyang","bangkok","hanoi","kualalumpur","singapore","jakarta","manila","kathmandu",
+"thimphu","dhaka","colombo","male","ulaanbaatar","astana","tashkent","ashgabat","dushanbe","bishkek",
+"athens","budapest","prague","bratislava","bucharest","sofia","zagreb","belgrade","ljubljana","sarajevo",
+"kyiv","minsk","tallinn","riga","vilnius","harare","lusaka","gaborone","windhoek","luanda"
+],
+
+"Fruit": [
+"apple","banana","mango","orange","grape","pineapple","watermelon","melon","papaya","guava",
+"peach","pear","plum","cherry","strawberry","blueberry","raspberry","blackberry","kiwi","lemon",
+"lime","apricot","fig","pomegranate","coconut","date","avocado","dragonfruit","passionfruit","lychee",
+"jackfruit","durian","tangerine","mandarin","grapefruit","persimmon","starfruit","mulberry","cranberry","currant",
+"gooseberry","quince","olive","bananaflower","breadfruit","longan","rambutan","sapodilla","soursop","custardapple",
+"salak","miraclefruit","jabuticaba","feijoa","bilberry","boysenberry","cloudberry","huckleberry","elderberry","medlar",
+"ackee","langsat","santol","tamarind","bael","woodapple","hogplum","ambarella","monstera","marula",
+"naranjilla","pepino","physalis","pitaya","roseapple","sugarapple","ugli","yuzu","ziziphus","acerola",
+"barberry","camu","cherimoya","damson","fingerlime","grumichama","hackberry","imbe","jostaberry","kepel",
+"lucuma","mamoncillo","nance","oroblanco","pulasan","quenepa","rowan","serviceberry","tamarillo","whitecurrant"
+],
+
+"Vegetable": [
+"carrot","potato","onion","tomato","cabbage","cauliflower","broccoli","spinach","lettuce","cucumber",
+"pepper","chili","garlic","ginger","radish","turnip","beetroot","eggplant","zucchini","pumpkin",
+"squash","pea","bean","lentil","chickpea","okra","asparagus","celery","leek","artichoke",
+"kale","arugula","collard","mustardgreens","parsley","basil","cilantro","dill","thyme","rosemary",
+"mint","fennel","horseradish","watercress","endive","escarole","bokchoy","napa","shallot","scallion",
+"yam","sweetpotato","cassava","taro","parsnip","rutabaga","salsify","kohlrabi","chayote","jicama",
+"daikon","lotusroot","bamboo","seaweed","mushroom","truffle","corn","avocadoveg","greenbean","waxbean",
+"snowpea","snappea","blackbean","kidneybean","soybean","adzuki","lima","butternut","acorn","spaghetti",
+"delicata","pattypan","radicchio","frisee","microgreens","sprouts","waterchestnut","yambean","celtuce","malabarspinach",
+"drumstick","ridgegourd","bittergourd","snakegourd","pointedgourd","ashgourd","ivy gourd","clusterbeans","fenugreek","amaranth"
+]
+}
