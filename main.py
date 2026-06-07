@@ -2,17 +2,41 @@ import tkinter as tk
 import random
 import json
 
+
 with open("words.json", "r") as file:
     word_categories = json.load(file)
 
 # Words
-words = ['pakistan', 'china', 'russia', 'india', 'iran']
+#words = ['pakistan', 'china', 'russia', 'india', 'iran']
 
 # Game variables
-word = random.choice(words)
+category = random.choice(list(word_categories.keys()))
+word = random.choice(word_categories[category])
+current_category = category
+
 display = ["_"] * len(word)
 attempts = 6
 guessed_letters = []
+
+hint_count = 0
+
+def show_hint():
+    global hint_count
+
+    if hint_count == 0:
+        result_label.config(text=f"Hint: Category is {current_category}", fg="yellow")
+
+    elif hint_count == 1:
+        result_label.config(text=f"Hint: First letter is '{word[0]}'", fg="yellow")
+
+    elif hint_count == 2:
+        result_label.config(text=f"Hint: Last letter is '{word[-1]}'", fg="yellow")
+
+    else:
+        result_label.config(text="No hints left!", fg="orange")
+        return
+
+    hint_count += 1
 
 # 🎨 Colors
 bg_color = "#1e1e2f"
@@ -63,19 +87,23 @@ def guess_letter():
 
 # 🔄 Restart function
 def restart_game():
-    global word, display, attempts, guessed_letters
+    def restart_game():
+        global word, display, attempts, guessed_letters, hint_count, current_category
+        category = random.choice(list(word_categories.keys()))
+        word = random.choice(word_categories[category])
+        current_category = category
 
-    word = random.choice(words)
-    display = ["_"] * len(word)
-    attempts = 6
-    guessed_letters = []
+        display = ["_"] * len(word)
+        attempts = 6
+        guessed_letters = []
+        hint_count = 0
 
-    word_label.config(text=" ".join(display))
-    attempts_label.config(text=f"Attempts Left: {attempts}")
-    guessed_label.config(text="Guessed: ")
-    result_label.config(text="")
+        word_label.config(text=" ".join(display))
+        attempts_label.config(text=f"Attempts Left: {attempts}")
+        guessed_label.config(text="Guessed: ")
+        result_label.config(text="")
 
-    guess_btn.config(state="normal")
+        guess_btn.config(state="normal")
 
 # 🖥️ Window
 root = tk.Tk()
@@ -104,6 +132,12 @@ guess_btn = tk.Button(root, text="Guess",
                       bg=accent_color, fg="white",
                       width=10, command=guess_letter)
 guess_btn.pack(pady=10)
+
+hint_btn = tk.Button(root, text="Hint",
+                     font=("Arial", 12),
+                     bg="#FFC107", fg="black",
+                     command=show_hint)
+hint_btn.pack(pady=5)
 
 # 📊 Attempts
 attempts_label = tk.Label(root, text=f"Attempts Left: {attempts}",
