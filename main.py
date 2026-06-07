@@ -32,6 +32,7 @@ def show_hint():
 
     else:
         result_label.config(text="No hints left!", fg="orange")
+        hint_btn.config(state="disabled")
         return
 
     hint_count += 1
@@ -54,9 +55,9 @@ def guess_letter():
         result_label.config(text="Enter ONE letter only!", fg="yellow")
         return
 
-    if letter == "":
-        result_label.config(text="Enter a letter!", fg="yellow")
-        return
+    # if letter == "":
+    #     result_label.config(text="Enter a letter!", fg="yellow")
+    #     return
 
     if letter in guessed_letters:
         result_label.config(text="Already guessed!", fg="orange")
@@ -87,23 +88,22 @@ def guess_letter():
 
 # 🔄 Restart function
 def restart_game():
-    def restart_game():
-        global word, display, attempts, guessed_letters, hint_count, current_category
-        category = random.choice(list(word_categories.keys()))
-        word = random.choice(word_categories[category])
-        current_category = category
+    global word, display, attempts, guessed_letters, hint_count, current_category
+    category = random.choice(list(word_categories.keys()))
+    word = random.choice(word_categories[category])
+    current_category = category
 
-        display = ["_"] * len(word)
-        attempts = 6
-        guessed_letters = []
-        hint_count = 0
+    display = ["_"] * len(word)
+    attempts = 6
+    guessed_letters = []
+    hint_count = 0
 
-        word_label.config(text=" ".join(display))
-        attempts_label.config(text=f"Attempts Left: {attempts}")
-        guessed_label.config(text="Guessed: ")
-        result_label.config(text="")
+    word_label.config(text=" ".join(display))
+    attempts_label.config(text=f"Attempts Left: {attempts}")
+    guessed_label.config(text="Guessed: ")
+    result_label.config(text="")
 
-        guess_btn.config(state="normal")
+    guess_btn.config(state="normal")
 
 # 🖥️ Window
 root = tk.Tk()
@@ -134,7 +134,7 @@ entry.pack(pady=5)
 guess_btn = tk.Button(root, text="Guess Letter",
                       font=("Arial", 12, "bold"),
                       bg=accent_color, fg="white",
-                      width=10, command=guess_letter)
+                      width=10, command=guess_letter, relief="flat")   # remove sharp border
 guess_btn.pack(pady=10)
 
 hint_btn = tk.Button(root, text="Check Hint",
