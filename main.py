@@ -1,5 +1,9 @@
 import tkinter as tk
 import random
+import json
+
+with open("words.json", "r") as file:
+    word_categories = json.load(file)
 
 # Words
 words = ['pakistan', 'china', 'russia', 'india', 'iran']
