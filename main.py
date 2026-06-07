@@ -6,8 +6,6 @@ import json
 with open("words.json", "r") as file:
     word_categories = json.load(file)
 
-# Words
-#words = ['pakistan', 'china', 'russia', 'india', 'iran']
 
 # Game variables
 category = random.choice(list(word_categories.keys()))
@@ -39,10 +37,12 @@ def show_hint():
     hint_count += 1
 
 # 🎨 Colors
-bg_color = "#1e1e2f"
-text_color = "#ffffff"
-accent_color = "#4CAF50"
-wrong_color = "#ff4d4d"
+bg_color = "#0f172a"      # deep navy (modern background)
+card_color = "#1e293b"    # slightly lighter panel
+text_color = "#e2e8f0"    # soft white (not harsh)
+accent_color = "#22c55e"  # fresh green
+wrong_color = "#ef4444"   # modern red
+highlight_color = "#38bdf8"  # sky blue (for focus elements)
 
 # 🎯 Guess function
 def guess_letter():
@@ -107,12 +107,12 @@ def restart_game():
 
 # 🖥️ Window
 root = tk.Tk()
-root.title("Hangman Game 🎮")
-root.geometry("500x400")
+root.title("Word Guessing Game 🎮")
+root.geometry("500x450")
 root.configure(bg=bg_color)
 
 # 🧱 Title
-title = tk.Label(root, text="HANGMAN GAME", font=("Helvetica", 22, "bold"),
+title = tk.Label(root, text="Word Guessing Game", font=("Helvetica", 22, "bold"),
                  bg=bg_color, fg=accent_color)
 title.pack(pady=10)
 
@@ -120,20 +120,24 @@ title.pack(pady=10)
 word_label = tk.Label(root, text=" ".join(display),
                       font=("Courier", 28, "bold"),
                       bg=bg_color, fg=text_color)
-word_label.pack(pady=15)
+word_label.pack(pady=10)
 
 # ⌨ Input
-entry = tk.Entry(root, font=("Arial", 16), justify="center")
+entry = tk.Entry(root, font=("Arial", 14), justify="center", )
 entry.pack(pady=5)
 
+# placeholder_text = "Enter the guess..."
+# entry.insert(0, placeholder_text)
+# entry.config(fg="grey")
+
 # 🎯 Guess button
-guess_btn = tk.Button(root, text="Guess",
+guess_btn = tk.Button(root, text="Guess Letter",
                       font=("Arial", 12, "bold"),
                       bg=accent_color, fg="white",
                       width=10, command=guess_letter)
 guess_btn.pack(pady=10)
 
-hint_btn = tk.Button(root, text="Hint",
+hint_btn = tk.Button(root, text="Check Hint",
                      font=("Arial", 12),
                      bg="#FFC107", fg="black",
                      command=show_hint)
