@@ -113,7 +113,7 @@ def restart_game():
 # Window
 root = tk.Tk()
 root.title("Word Guessing Game 🎮")
-root.geometry("500x450")
+root.geometry("500x430")
 root.configure(bg=bg_color)
 
 # Title
