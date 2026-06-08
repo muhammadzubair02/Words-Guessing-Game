@@ -155,7 +155,7 @@ attempts_label = tk.Label(root, text=f"Attempts Left: {attempts}",
 attempts_label.pack()
 
 # Guessed letters
-guessed_label = tk.Label(root, text="Already Guessed Letter: ",
+guessed_label = tk.Label(root, text="Already Guessed Letters: ",
                          font=("Arial", 11),
                          bg=bg_color, fg="#cccccc")
 guessed_label.pack(pady=5)
@@ -164,7 +164,7 @@ guessed_label.pack(pady=5)
 result_label = tk.Label(root, text="",
                         font=("Arial", 14, "bold"),
                         bg=bg_color)
-result_label.pack(pady=10)
+result_label.pack(pady=5)
 
 # Restart button
 restart_btn = tk.Button(root, text="Restart",
