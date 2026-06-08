@@ -31,7 +31,8 @@ def show_hint():
         result_label.config(text=f"Hint: Second letter of the word is '{word[1]}'", fg="yellow")
 
     elif hint_count == 3:
-        result_label.config(text=f"Hint: Third letter of the word is '{word[2]}'", fg="yellow")
+        if len(word) >= 2:
+            result_label.config(text=f"Hint: Third letter of the word is '{word[2]}'", fg="yellow")
 
     else:
         result_label.config(text="No hints left!", fg="orange")
@@ -107,6 +108,7 @@ def restart_game():
     result_label.config(text="")
 
     guess_btn.config(state="normal")
+    hint_btn.config(state="normal")
 
 # 🖥️ Window
 root = tk.Tk()
@@ -125,7 +127,7 @@ word_label = tk.Label(root, text=" ".join(display),
                       bg=bg_color, fg=text_color)
 word_label.pack(pady=10)
 
-# ⌨ Input
+# Input Feild
 entry = tk.Entry(root, font=("Arial", 14), justify="center", )
 entry.pack(pady=5)
 
@@ -133,7 +135,7 @@ entry.pack(pady=5)
 # entry.insert(0, placeholder_text)
 # entry.config(fg="grey")
 
-# 🎯 Guess button
+# Guess button
 guess_btn = tk.Button(root, text="Guess Letter",
                       font=("Arial", 12, "bold"),
                       bg=accent_color, fg="white",
@@ -146,14 +148,14 @@ hint_btn = tk.Button(root, text="Check Hint",
                      command=show_hint)
 hint_btn.pack(pady=5)
 
-# 📊 Attempts
+#  Total Remaining Attempts
 attempts_label = tk.Label(root, text=f"Attempts Left: {attempts}",
                           font=("Arial", 12),
                           bg=bg_color, fg=text_color)
 attempts_label.pack()
 
 # 🔠 Guessed letters
-guessed_label = tk.Label(root, text="Guessed: ",
+guessed_label = tk.Label(root, text="Already Guessed Letter: ",
                          font=("Arial", 11),
                          bg=bg_color, fg="#cccccc")
 guessed_label.pack(pady=5)
