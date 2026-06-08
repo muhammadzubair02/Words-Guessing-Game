@@ -25,10 +25,13 @@ def show_hint():
         result_label.config(text=f"Hint: Category is {current_category}", fg="yellow")
 
     elif hint_count == 1:
-        result_label.config(text=f"Hint: First letter is '{word[0]}'", fg="yellow")
+        result_label.config(text=f"Hint: First letter of the word is '{word[0]}'", fg="yellow")
 
     elif hint_count == 2:
-        result_label.config(text=f"Hint: Last letter is '{word[-1]}'", fg="yellow")
+        result_label.config(text=f"Hint: Second letter of the word is '{word[1]}'", fg="yellow")
+
+    elif hint_count == 3:
+        result_label.config(text=f"Hint: Third letter of the word is '{word[2]}'", fg="yellow")
 
     else:
         result_label.config(text="No hints left!", fg="orange")
