@@ -41,7 +41,7 @@ def show_hint():
 
     hint_count += 1
 
-# 🎨 Colors
+# These colors are used
 bg_color = "#0f172a"      # deep navy (modern background)
 card_color = "#1e293b"    # slightly lighter panel
 text_color = "#e2e8f0"    # soft white (not harsh)
@@ -49,7 +49,7 @@ accent_color = "#22c55e"  # fresh green
 wrong_color = "#ef4444"   # modern red
 highlight_color = "#38bdf8"  # sky blue (for focus elements)
 
-# 🎯 Guess function
+# Guess function
 def guess_letter():
     global attempts
 
@@ -90,7 +90,7 @@ def guess_letter():
         result_label.config(text=f"💀 Game Over! Word: {word}", fg=wrong_color)
         guess_btn.config(state="disabled")
 
-# 🔄 Restart function
+# Restart function
 def restart_game():
     global word, display, attempts, guessed_letters, hint_count, current_category
     category = random.choice(list(word_categories.keys()))
@@ -110,18 +110,18 @@ def restart_game():
     guess_btn.config(state="normal")
     hint_btn.config(state="normal")
 
-# 🖥️ Window
+# Window
 root = tk.Tk()
 root.title("Word Guessing Game 🎮")
 root.geometry("500x450")
 root.configure(bg=bg_color)
 
-# 🧱 Title
+# Title
 title = tk.Label(root, text="Word Guessing Game", font=("Helvetica", 22, "bold"),
                  bg=bg_color, fg=accent_color)
 title.pack(pady=10)
 
-# 🔤 Word display
+# Word display
 word_label = tk.Label(root, text=" ".join(display),
                       font=("Courier", 28, "bold"),
                       bg=bg_color, fg=text_color)
@@ -154,19 +154,19 @@ attempts_label = tk.Label(root, text=f"Attempts Left: {attempts}",
                           bg=bg_color, fg=text_color)
 attempts_label.pack()
 
-# 🔠 Guessed letters
+# Guessed letters
 guessed_label = tk.Label(root, text="Already Guessed Letter: ",
                          font=("Arial", 11),
                          bg=bg_color, fg="#cccccc")
 guessed_label.pack(pady=5)
 
-# 📢 Result
+# Result
 result_label = tk.Label(root, text="",
                         font=("Arial", 14, "bold"),
                         bg=bg_color)
 result_label.pack(pady=10)
 
-# 🔄 Restart button
+# Restart button
 restart_btn = tk.Button(root, text="Restart",
                         font=("Arial", 12),
                         bg="#2196F3", fg="white",
