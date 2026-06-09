@@ -85,10 +85,12 @@ def guess_letter():
     if "_" not in display:
         result_label.config(text="🎉 You Win!", fg=accent_color)
         guess_btn.config(state="disabled")
+        
 
     elif attempts == 0:
         result_label.config(text=f"💀 Game Over! Word: {word}", fg=wrong_color)
         guess_btn.config(state="disabled")
+        
 
 # Restart function
 def restart_game():
