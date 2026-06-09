@@ -22,17 +22,26 @@ def show_hint():
     global hint_count
 
     if hint_count == 0:
-        result_label.config(text=f"Hint: Category is {current_category}", fg="yellow")
-
-    elif hint_count == 1:
         result_label.config(text=f"Hint: First letter of the word is '{word[0]}'", fg="yellow")
 
+    elif hint_count == 1:
+        if len(word) > 1:
+            result_label.config(text=f"Hint: Second letter of the word is '{word[1]}'", fg="yellow")
+        else:
+            result_label.config(text="Hint not available", fg="orange")
+
     elif hint_count == 2:
-        result_label.config(text=f"Hint: Second letter of the word is '{word[1]}'", fg="yellow")
+        if len(word) > 2:
+            result_label.config(text=f"Hint: Third letter of the word is '{word[2]}'", fg="yellow")
+        else:
+            result_label.config(text="Hint not available", fg="orange")
 
     elif hint_count == 3:
-        if len(word) >= 2:
-            result_label.config(text=f"Hint: Third letter of the word is '{word[2]}'", fg="yellow")
+        if len(word) > 3:
+            result_label.config(text=f"Hint: Fourth letter of the word is '{word[3]}'", fg="yellow")
+        else:
+            result_label.config(text="Hint not available", fg="orange")
+            
 
     else:
         result_label.config(text="No hints left!", fg="orange")
@@ -85,16 +94,16 @@ def guess_letter():
     if "_" not in display:
         result_label.config(text="🎉 You Win!", fg=accent_color)
         guess_btn.config(state="disabled")
-        
+        hint_btn.config(state="disabled")
 
     elif attempts == 0:
         result_label.config(text=f"💀 Game Over! Word: {word}", fg=wrong_color)
         guess_btn.config(state="disabled")
-        
+        hint_btn.config(state="disabled")
 
 # Restart function
 def restart_game():
-    global word, display, attempts, guessed_letters, hint_count, current_category
+    global word, display, attempts, guessed_letters, hint_count, current_category, category
     category = random.choice(list(word_categories.keys()))
     word = random.choice(word_categories[category])
     current_category = category
@@ -111,6 +120,7 @@ def restart_game():
 
     guess_btn.config(state="normal")
     hint_btn.config(state="normal")
+    category_label.config(text=f"Category: {current_category}")
 
 # Window
 root = tk.Tk()
@@ -149,6 +159,10 @@ hint_btn = tk.Button(root, text="Check Hint",
                      bg="#FFC107", fg="black",
                      command=show_hint)
 hint_btn.pack(pady=5)
+
+category_label = tk.Label(root, text=f"Category: {current_category}",
+                          bg=bg_color, fg=highlight_color)
+category_label.pack()
 
 #  Total Remaining Attempts
 attempts_label = tk.Label(root, text=f"Attempts Left: {attempts}",
