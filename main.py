@@ -1,3 +1,4 @@
+#Import some requried libraries
 import tkinter as tk
 import random
 import json
@@ -50,13 +51,13 @@ def show_hint():
 
     hint_count += 1
 
-# These colors are used
-bg_color = "#0f172a"      # deep navy (modern background)
-card_color = "#1e293b"    # slightly lighter panel
-text_color = "#e2e8f0"    # soft white (not harsh)
-accent_color = "#22c55e"  # fresh green
-wrong_color = "#ef4444"   # modern red
-highlight_color = "#38bdf8"  # sky blue (for focus elements)
+# These colors are in used
+bg_color = "#0f172a"      # navy 
+card_color = "#1e293b"    # light navy
+text_color = "#e2e8f0"    # white 
+accent_color = "#22c55e"  # green
+wrong_color = "#ef4444"   # red
+highlight_color = "#38bdf8"  # sky blue
 
 # Guess function
 def guess_letter():
